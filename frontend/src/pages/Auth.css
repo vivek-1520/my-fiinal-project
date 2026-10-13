@@ -1,0 +1,84 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.auth-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+.auth-orb-1 {
+  width: 500px; height: 500px;
+  background: rgba(124, 58, 237, 0.2);
+  top: -150px; left: -150px;
+  animation: pulse 6s ease infinite;
+}
+.auth-orb-2 {
+  width: 400px; height: 400px;
+  background: rgba(0, 217, 166, 0.15);
+  bottom: -100px; right: -100px;
+  animation: pulse 8s ease infinite reverse;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 28px;
+  color: var(--text-primary);
+  justify-content: center;
+}
+
+.auth-title {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 6px;
+}
+.auth-sub {
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+.auth-form { display: flex; flex-direction: column; gap: 18px; }
+
+.input-group { display: flex; flex-direction: column; gap: 6px; }
+.input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+
+.input-icon-wrap { position: relative; }
+.input-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+.pass-toggle {
+  position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: var(--text-muted); cursor: pointer;
+  padding: 0; display: flex; align-items: center;
+}
+.pass-toggle:hover { color: var(--text-primary); }
+
+.password-strength { display: flex; gap: 8px; flex-wrap: wrap; }
+.req-tag {
+  font-size: 12px; padding: 3px 10px; border-radius: var(--radius-full);
+  background: var(--bg-secondary); border: 1px solid var(--border);
+  color: var(--text-muted); transition: all 0.3s;
+}
+.req-met { background: rgba(0,217,166,0.1); border-color: rgba(0,217,166,0.3); color: var(--accent-green); }
+
+.auth-footer { text-align: center; margin-top: 24px; font-size: 14px; color: var(--text-secondary); }
+.auth-link { color: var(--accent-green); font-weight: 600; transition: color 0.2s; }
+.auth-link:hover { color: var(--accent-blue); }

@@ -1,0 +1,26 @@
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nav-user:hover { background: var(--bg-card); }
+
+.nav-user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.nav-username {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.nav-rating {
+  font-size: 11px;
+  color: var(--accent-orange);
+  font-weight: 500;
+}
