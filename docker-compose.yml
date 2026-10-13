@@ -1,0 +1,36 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: clash_mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: clash_backend
+    restart: always
+    environment:
+      - PORT=5000
+      - MONGO_URI=mongodb://mongodb:27017/clash-of-dsa
+      - JWT_SECRET=clash_of_dsa_production_secret_key
+      - JUDGE0_URL=https://judge0-ce.p.rapidapi.com
+      - JUDGE0_API_KEY=${JUDGE0_API_KEY}
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: ./frontend
+    container_name: clash_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
